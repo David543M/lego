@@ -493,6 +493,10 @@ console.log('camera:', camera);
 // 2. What do you notice?
 // We notice that modifying the camera object also affects sealedCamera because they both reference the same object in memory
 
+camera = { ...sealedCamera, favorite: true };
+console.log('Camera:', camera);
+console.log('Sealed Camera:', sealedCamera);
+
 // we make (again) a new assignment again
 sealedCamera = {
   link: "https://www.vinted.fr/items/5563396347-lego-43230-omaggio-a-walter-disney-misb",
