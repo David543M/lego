@@ -61,7 +61,6 @@ const fetchDeals = async (page = 1, size = 6) => {
       return { currentDeals, currentPagination };
     }
 
-    // Directly use the discount provided by the API
     const deals = body.data.result.map(deal => ({
       ...deal,
       discount: deal.discount || 0, // Use the API's discount field, default to 0 if not present

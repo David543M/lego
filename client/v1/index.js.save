@@ -486,12 +486,15 @@ let camera = sealedCamera;
 camera.favorite = true;
 
 // 1. Log `sealedCamera` and `camera` variables
+<<<<<<< HEAD
 
 console.log('sealedCamera:', sealedCamera);
 console.log('camera:', camera);
 
 // 2. What do you notice?
 // We notice that modifying the camera object also affects sealedCamera because they both reference the same object in memory
+=======
+>>>>>>> 6983d1c (feat(total): profitability)
 
 console.log('sealedCamera:', sealedCamera);
 console.log('camera:', camera);
@@ -557,4 +560,4 @@ const localStorage = {
 
 localStorage.setItem('MY_FAVORITE_DEALERS', JSON.stringify(MY_FAVORITE_DEALERS));
 
-console.log('localStorage Content:', localStorage.getItem('MY_FAVORITE_DEALERS'));
+console.log('localStorage Content:', localStorage.getItem('MY_FAVORITE_DEALERS'))
