@@ -486,11 +486,12 @@ let camera = sealedCamera;
 camera.favorite = true;
 
 // 1. Log `sealedCamera` and `camera` variables
-// 2. What do you notice?
 
-camera = { ...sealedCamera, favorite: true };
-console.log('Camera:', camera);
-console.log('Sealed Camera:', sealedCamera);
+console.log('sealedCamera:', sealedCamera);
+console.log('camera:', camera);
+
+// 2. What do you notice?
+// We notice that modifying the camera object also affects sealedCamera because they both reference the same object in memory
 
 // we make (again) a new assignment again
 sealedCamera = {
@@ -503,8 +504,11 @@ sealedCamera = {
 
 // 3. Update `camera` property with `favorite` to true WITHOUT changing sealedCamera properties
 
+camera = { ...sealedCamera, favorite: true };
+console.log('Camera:', camera);
+console.log('Sealed Camera:', sealedCamera);
 
-// 🎯 TODO 11: Compute the profitability
+// 🎯 TODO 16: Compute the profitability
 // From a specific deal called `deal`
 const deal = {
   'title':  'La caméra Hommage à Walt Disney',
@@ -514,9 +518,12 @@ const deal = {
 }
 
 // 1. Compute the potential highest profitability based on the VINTED items
+
+const profitability = ((deal.retail - deal.price) / deal.retail) * 100;
+
 // 2. Log the value
 
-
+console.log(`Profitability: ${profitability.toFixed(2)}%`);
 
 /**
  * 🎬
