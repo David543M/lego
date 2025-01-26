@@ -31,6 +31,7 @@ const selectPage = document.querySelector('#page-select');
 const selectLegoSetIds = document.querySelector('#lego-set-id-select');
 const sectionDeals= document.querySelector('#deals');
 const spanNbDeals = document.querySelector('#nbDeals');
+const sortSelect = document.querySelector('#sort-select');
 
 /**
  * Set global value
@@ -57,8 +58,19 @@ const fetchDeals = async (page = 1, size = 6) => {
 
     if (body.success !== true) {
       console.error(body);
-      return {currentDeals, currentPagination};
+      return { currentDeals, currentPagination };
     }
+
+    // Directly use the discount provided by the API
+    const deals = body.data.result.map(deal => ({
+      ...deal,
+      discount: deal.discount || 0, // Use the API's discount field, default to 0 if not present
+    }));
+
+    return {
+      result: deals,
+      meta: body.data.meta,
+    };
 
     return body.data;
   } catch (error) {
@@ -66,6 +78,8 @@ const fetchDeals = async (page = 1, size = 6) => {
     return {currentDeals, currentPagination};
   }
 };
+
+
 
 /**
  * Render list of deals
@@ -81,6 +95,8 @@ const renderDeals = deals => {
         <span>${deal.id}</span>
         <a href="${deal.link}">${deal.title}</a>
         <span>${deal.price}</span>
+        <span> - Discount: ${deal.discount.toFixed(2)}%</span>
+        <span> - Comments: ${deal.comments}</span> <!-- Displaying comments -->
       </div>
     `;
     })
@@ -99,7 +115,7 @@ const renderDeals = deals => {
 const renderPagination = pagination => {
   const {currentPage, pageCount} = pagination;
   const options = Array.from(
-    {'length': pageCount},
+    {length: pageCount},
     (value, index) => `<option value="${index + 1}">${index + 1}</option>`
   ).join('');
 
@@ -156,4 +172,41 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   setCurrentDeals(deals);
   render(currentDeals, currentPagination);
+});
+
+
+// Feature 1
+selectPage.addEventListener('change', async (event) => {
+  const size = parseInt(selectShow.value); // We get the selected size of deals to show
+  const goToPage = parseInt(event.target.value); // We get selected page number
+  const deals = await fetchDeals(goToPage, size); // We fetch deals of the selected page with the correct size we want to show
+
+  setCurrentDeals(deals); // We update the state with new deals and pagination
+  render(currentDeals, currentPagination); // We re-render the UI
+});
+
+
+sortSelect.addEventListener('change', () => {
+  const selectedValue = sortSelect.value;
+
+  if (selectedValue === 'none') {
+    // Default case: Reset to all deals
+    renderDeals(currentDeals);
+    spanNbDeals.innerHTML = currentDeals.length;
+  } else if (selectedValue === 'discount-desc') {
+    // Filter by discount > 50%
+    const filteredDeals = currentDeals.filter(deal => deal.discount > 50);
+    renderDeals(filteredDeals.length > 0 ? filteredDeals : []);
+    spanNbDeals.innerHTML = filteredDeals.length;
+  } else if (selectedValue === 'most-commented') {
+    // Filter by deals with more than 15 comments
+    const filteredDeals = currentDeals.filter(deal => deal.comments > 15);
+
+    if (filteredDeals.length === 0) {
+      sectionDeals.innerHTML = '<h2>No deals with more than 15 comments</h2>';
+    } else {
+      renderDeals(filteredDeals);
+      spanNbDeals.innerHTML = filteredDeals.length;
+    }
+  }
 });
