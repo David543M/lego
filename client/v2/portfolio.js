@@ -67,6 +67,8 @@ const fetchDeals = async (page = 1, size = 6) => {
       discount: deal.discount || 0, // Use the API's discount field, default to 0 if not present
       comments: deal.comments || 0,
       temperature: deal.temperature || 0,
+      price: deal.price || 0,
+      date: new Date(deal.date || Date.now()),
     }));
 
     return {
@@ -99,6 +101,7 @@ const renderDeals = deals => {
         <span> - Discount: ${deal.discount.toFixed(2)}%</span>
         <span> - Comments: ${deal.comments}</span> <!-- Displaying comments -->
         <span> - Temperature: ${deal.temperature}</span> <!-- Displaying temperature -->
+        <span> - Date: ${deal.date.toLocaleDateString()}</span> <!-- Displaying date -->
       </div>
     `;
     })
@@ -206,6 +209,26 @@ sortSelect.addEventListener('change', () => {
   } else if (selectedValue === 'hot-deals') {
     // Filter by temperature > 100
     const filteredDeals = currentDeals.filter(deal => deal.temperature > 100);
+  } else if (selectedValue === 'price-asc') {
+    // Sort by price: Low to High
+    const sortedDeals = [...currentDeals].sort((a, b) => a.price - b.price);
+    renderDeals(sortedDeals);
+    spanNbDeals.innerHTML = sortedDeals.length;
+  } else if (selectedValue === 'price-desc') {
+    // Sort by price: High to Low
+    const sortedDeals = [...currentDeals].sort((a, b) => b.price - a.price);
+    renderDeals(sortedDeals);
+    spanNbDeals.innerHTML = sortedDeals.length;
+  } else if (selectedValue === 'date-asc') {
+    // Sort by date: Oldest First
+    const sortedDeals = [...currentDeals].sort((a, b) => a.date - b.date);
+    renderDeals(sortedDeals);
+    spanNbDeals.innerHTML = sortedDeals.length;
+  } else if (selectedValue === 'date-desc') {
+    // Sort by date: Newest First
+    const sortedDeals = [...currentDeals].sort((a, b) => b.date - a.date);
+    renderDeals(sortedDeals);
+    spanNbDeals.innerHTML = sortedDeals.length;
 
     if (filteredDeals.length === 0) {
       sectionDeals.innerHTML = '<h2>No deals corresponding to your filter';
