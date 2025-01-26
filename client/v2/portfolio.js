@@ -65,6 +65,8 @@ const fetchDeals = async (page = 1, size = 6) => {
     const deals = body.data.result.map(deal => ({
       ...deal,
       discount: deal.discount || 0, // Use the API's discount field, default to 0 if not present
+      comments: deal.comments || 0,
+      temperature: deal.temperature || 0,
     }));
 
     return {
@@ -72,7 +74,6 @@ const fetchDeals = async (page = 1, size = 6) => {
       meta: body.data.meta,
     };
 
-    return body.data;
   } catch (error) {
     console.error(error);
     return {currentDeals, currentPagination};
@@ -97,6 +98,7 @@ const renderDeals = deals => {
         <span>${deal.price}</span>
         <span> - Discount: ${deal.discount.toFixed(2)}%</span>
         <span> - Comments: ${deal.comments}</span> <!-- Displaying comments -->
+        <span> - Temperature: ${deal.temperature}</span> <!-- Displaying temperature -->
       </div>
     `;
     })
@@ -201,9 +203,12 @@ sortSelect.addEventListener('change', () => {
   } else if (selectedValue === 'most-commented') {
     // Filter by deals with more than 15 comments
     const filteredDeals = currentDeals.filter(deal => deal.comments > 15);
+  } else if (selectedValue === 'hot-deals') {
+    // Filter by temperature > 100
+    const filteredDeals = currentDeals.filter(deal => deal.temperature > 100);
 
     if (filteredDeals.length === 0) {
-      sectionDeals.innerHTML = '<h2>No deals with more than 15 comments</h2>';
+      sectionDeals.innerHTML = '<h2>No deals corresponding to your filter';
     } else {
       renderDeals(filteredDeals);
       spanNbDeals.innerHTML = filteredDeals.length;
