@@ -81,8 +81,6 @@ const fetchDeals = async (page = 1, size = 6) => {
   }
 };
 
-
-
 /**
  * Render list of deals
  * @param  {Array} deals
