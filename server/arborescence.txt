@@ -1,0 +1,382 @@
+Structure du dossier pour le volume Samsung SSD 990 PRO
+Le numéro de série du volume est 6CA3-C1FA
+D:.
++---node_modules
+|   +---.bin
+|   +---accepts
+|   +---anymatch
+|   +---array-flatten
+|   +---asynckit
+|   |   \---lib
+|   +---axios
+|   |   +---dist
+|   |   |   +---browser
+|   |   |   +---esm
+|   |   |   \---node
+|   |   \---lib
+|   |       +---adapters
+|   |       +---cancel
+|   |       +---core
+|   |       +---defaults
+|   |       +---env
+|   |       |   \---classes
+|   |       +---helpers
+|   |       \---platform
+|   |           +---browser
+|   |           |   \---classes
+|   |           +---common
+|   |           \---node
+|   |               \---classes
+|   +---balanced-match
+|   |   \---.github
+|   +---binary-extensions
+|   +---body-parser
+|   |   +---lib
+|   |   |   \---types
+|   |   \---node_modules
+|   |       +---debug
+|   |       |   \---src
+|   |       +---iconv-lite
+|   |       |   +---encodings
+|   |       |   |   \---tables
+|   |       |   \---lib
+|   |       \---ms
+|   +---boolbase
+|   +---brace-expansion
+|   +---braces
+|   |   \---lib
+|   +---bytes
+|   +---call-bind-apply-helpers
+|   |   +---.github
+|   |   \---test
+|   +---call-bound
+|   |   +---.github
+|   |   \---test
+|   +---cheerio
+|   |   +---dist
+|   |   |   +---browser
+|   |   |   |   +---api
+|   |   |   |   \---parsers
+|   |   |   +---commonjs
+|   |   |   |   +---api
+|   |   |   |   \---parsers
+|   |   |   \---esm
+|   |   |       +---api
+|   |   |       \---parsers
+|   |   \---src
+|   |       +---api
+|   |       +---parsers
+|   |       +---__fixtures__
+|   |       \---__tests__
+|   +---cheerio-select
+|   |   \---lib
+|   |       \---esm
+|   +---chokidar
+|   |   +---lib
+|   |   \---types
+|   +---clone-regexp
+|   +---combined-stream
+|   |   \---lib
+|   +---concat-map
+|   |   +---example
+|   |   \---test
+|   +---content-disposition
+|   +---content-type
+|   +---convert-hrtime
+|   +---cookie
+|   +---cookie-signature
+|   +---css-select
+|   |   \---lib
+|   |       +---esm
+|   |       |   \---pseudo-selectors
+|   |       \---pseudo-selectors
+|   +---css-what
+|   |   \---lib
+|   |       +---commonjs
+|   |       \---es
+|   +---debug
+|   |   \---src
+|   +---delayed-stream
+|   |   \---lib
+|   +---depd
+|   |   \---lib
+|   |       \---browser
+|   +---destroy
+|   +---dom-serializer
+|   |   \---lib
+|   |       \---esm
+|   +---domelementtype
+|   |   \---lib
+|   |       \---esm
+|   +---domhandler
+|   |   \---lib
+|   |       \---esm
+|   +---domutils
+|   |   \---lib
+|   |       \---esm
+|   +---dunder-proto
+|   |   +---.github
+|   |   \---test
+|   +---ee-first
+|   +---encodeurl
+|   +---encoding-sniffer
+|   |   \---dist
+|   |       +---commonjs
+|   |       \---esm
+|   +---entities
+|   |   \---lib
+|   |       +---esm
+|   |       |   \---generated
+|   |       \---generated
+|   +---es-define-property
+|   |   +---.github
+|   |   \---test
+|   +---es-errors
+|   |   +---.github
+|   |   \---test
+|   +---es-object-atoms
+|   |   +---.github
+|   |   \---test
+|   +---escape-html
+|   +---etag
+|   +---express
+|   |   +---lib
+|   |   |   +---middleware
+|   |   |   \---router
+|   |   \---node_modules
+|   |       +---debug
+|   |       |   \---src
+|   |       \---ms
+|   +---fill-range
+|   +---finalhandler
+|   |   \---node_modules
+|   |       +---debug
+|   |       |   \---src
+|   |       \---ms
+|   +---follow-redirects
+|   +---form-data
+|   |   \---lib
+|   +---forwarded
+|   +---fresh
+|   +---function-bind
+|   |   +---.github
+|   |   \---test
+|   +---function-timeout
+|   +---get-intrinsic
+|   |   +---.github
+|   |   \---test
+|   +---get-proto
+|   |   +---.github
+|   |   \---test
+|   +---glob-parent
+|   +---gopd
+|   |   +---.github
+|   |   \---test
+|   +---has-flag
+|   +---has-symbols
+|   |   +---.github
+|   |   \---test
+|   |       \---shams
+|   +---hasown
+|   |   \---.github
+|   +---htmlparser2
+|   |   \---lib
+|   |       \---esm
+|   +---http-errors
+|   +---iconv-lite
+|   |   +---.github
+|   |   +---.idea
+|   |   |   +---codeStyles
+|   |   |   \---inspectionProfiles
+|   |   +---encodings
+|   |   |   \---tables
+|   |   \---lib
+|   +---ignore-by-default
+|   +---inherits
+|   +---ip-regex
+|   +---ipaddr.js
+|   |   \---lib
+|   +---is-binary-path
+|   +---is-extglob
+|   +---is-glob
+|   +---is-ip
+|   +---is-number
+|   +---is-regexp
+|   +---math-intrinsics
+|   |   +---.github
+|   |   +---constants
+|   |   \---test
+|   +---media-typer
+|   +---merge-descriptors
+|   +---methods
+|   +---mime
+|   |   \---src
+|   +---mime-db
+|   +---mime-types
+|   +---minimatch
+|   +---ms
+|   +---negotiator
+|   |   \---lib
+|   +---node-fetch
+|   |   \---lib
+|   +---nodemon
+|   |   +---bin
+|   |   +---doc
+|   |   |   \---cli
+|   |   \---lib
+|   |       +---cli
+|   |       +---config
+|   |       +---help
+|   |       +---monitor
+|   |       +---rules
+|   |       \---utils
+|   +---normalize-path
+|   +---nth-check
+|   |   \---lib
+|   |       \---esm
+|   +---object-inspect
+|   |   +---.github
+|   |   +---example
+|   |   \---test
+|   |       \---browser
+|   +---on-finished
+|   +---parse-domain
+|   |   +---bin
+|   |   +---build
+|   |   |   +---psl
+|   |   |   +---scripts
+|   |   |   \---trie
+|   |   \---serialized-tries
+|   +---parse5
+|   |   \---dist
+|   |       +---cjs
+|   |       |   +---common
+|   |       |   +---parser
+|   |       |   +---serializer
+|   |       |   +---tokenizer
+|   |       |   \---tree-adapters
+|   |       +---common
+|   |       +---parser
+|   |       +---serializer
+|   |       +---tokenizer
+|   |       \---tree-adapters
+|   +---parse5-htmlparser2-tree-adapter
+|   |   \---dist
+|   |       \---cjs
+|   +---parse5-parser-stream
+|   |   \---dist
+|   |       \---cjs
+|   +---parseurl
+|   +---path-to-regexp
+|   +---picomatch
+|   |   \---lib
+|   +---proxy-addr
+|   +---proxy-from-env
+|   +---pstree.remy
+|   |   +---lib
+|   |   \---tests
+|   |       \---fixtures
+|   +---qs
+|   |   +---.github
+|   |   +---dist
+|   |   +---lib
+|   |   \---test
+|   +---range-parser
+|   +---raw-body
+|   |   \---node_modules
+|   |       \---iconv-lite
+|   |           +---encodings
+|   |           |   \---tables
+|   |           \---lib
+|   +---readdirp
+|   +---require-all
+|   +---safe-buffer
+|   +---safer-buffer
+|   +---semver
+|   |   +---bin
+|   |   +---classes
+|   |   +---functions
+|   |   +---internal
+|   |   \---ranges
+|   +---send
+|   |   \---node_modules
+|   |       +---debug
+|   |       |   +---node_modules
+|   |       |   |   \---ms
+|   |       |   \---src
+|   |       \---encodeurl
+|   +---serve-static
+|   +---setprototypeof
+|   |   \---test
+|   +---side-channel
+|   |   +---.github
+|   |   \---test
+|   +---side-channel-list
+|   |   +---.github
+|   |   \---test
+|   +---side-channel-map
+|   |   +---.github
+|   |   \---test
+|   +---side-channel-weakmap
+|   |   +---.github
+|   |   \---test
+|   +---simple-update-notifier
+|   |   +---build
+|   |   \---src
+|   +---statuses
+|   +---super-regex
+|   +---supports-color
+|   +---time-span
+|   +---to-regex-range
+|   +---toidentifier
+|   +---touch
+|   |   \---bin
+|   +---tr46
+|   |   \---lib
+|   +---type-is
+|   +---undefsafe
+|   |   +---.github
+|   |   |   \---workflows
+|   |   \---lib
+|   +---undici
+|   |   +---docs
+|   |   |   \---docs
+|   |   |       +---api
+|   |   |       \---best-practices
+|   |   +---lib
+|   |   |   +---api
+|   |   |   +---core
+|   |   |   +---dispatcher
+|   |   |   +---handler
+|   |   |   +---interceptor
+|   |   |   +---llhttp
+|   |   |   +---mock
+|   |   |   +---util
+|   |   |   \---web
+|   |   |       +---cache
+|   |   |       +---cookies
+|   |   |       +---eventsource
+|   |   |       +---fetch
+|   |   |       +---fileapi
+|   |   |       \---websocket
+|   |   +---scripts
+|   |   \---types
+|   +---unpipe
+|   +---utils-merge
+|   +---uuid
+|   |   \---dist
+|   |       +---cjs
+|   |       +---cjs-browser
+|   |       +---esm
+|   |       |   \---bin
+|   |       \---esm-browser
+|   +---vary
+|   +---webidl-conversions
+|   |   \---lib
+|   +---whatwg-encoding
+|   |   \---lib
+|   +---whatwg-mimetype
+|   |   \---lib
+|   \---whatwg-url
+|       \---lib
+\---websites
